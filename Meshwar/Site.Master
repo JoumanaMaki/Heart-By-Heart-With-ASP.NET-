@@ -1,0 +1,150 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Meshwar.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+      <link href="images/HBH.png" rel="shortcut icon" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title><%: Page.Title %> </title>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<style>
+    a{
+        text-decoration:none;
+    }
+    .dropdown {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+
+</style>
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark" style="background-color:mistyrose">
+            <div class="container">
+             <a href="index" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+               <img src="images/HBH.png"  style="border-radius:30%;" width="50px" height="30px" class="img-fluid" alt="Responsive image" />
+                </a>&nbsp&nbsp&nbsp&nbsp
+                <a class="navbar-brand" runat="server" href="/frontEnd/index" style="color:darkred; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-weight:700">Heart By Heart</a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/frontEnd/index"  style="color:darkred; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-weight:700">Home</a></li>
+                                     <li class="nav-item"><a class="nav-link" runat="server" href="~/frontEnd/Doctors"  style="color:darkred; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-weight:700">Doctors</a></li>
+
+                   <li class="nav-item"><a class="nav-link" runat="server" href="~/frontEnd/Articles"  style="color:darkred; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-weight:700">Articles</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/frontEnd/About"  style="color:darkred; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-weight:700">About</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/frontEnd/ContactUs"  style="color:darkred; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-weight:700">Contact</a></li>
+                  <li class="nav-item"><a class="nav-link" runat="server" href="~/frontEnd/LogIn"  style="color:darkred; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-weight:700">Log In</a></li>
+                 
+         
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+           <footer style="background-color:mistyrose; color:darkred"class=" text-center text-lg-start">
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Heart By Heart</h5>
+     <strong>   <p>Heart By Heart is a unique platform designed to connect medical professionals and users seeking healthcare information.
+        </p>
+
+         Our goal is to create a seamless experience that empowers individuals to make informed decisions about their health.
+     </strong>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Links</h5>
+
+        <ul class="list-unstyled mb-0" >
+          <li>
+            <a href="index.aspx" style="color:darkred" class="text-dark">Home</a>
+          </li>
+          <li>
+            <a href="Doctors.aspx" style="color:darkred" class="text-dark">Doctors</a>
+          </li>
+          <li>
+            <a href="Articles.aspx" style="color:darkred" class="text-dark">Articles</a>
+          </li>
+          <li>
+            <a href="About.aspx" style="color:darkred"  class="text-dark">About Us</a>
+          </li>
+             <li>
+            <a href="ContactUs.aspx" style="color:darkred" class="text-dark">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase mb-0">Get In Touch</h5>
+          <br />
+          
+        <ul class="list-unstyled">
+          <li>
+        <i class="fa fa-envelope" ></i>   &nbsp &nbsp<strong> <a href="mailto:heartbyheart@gmail.com">Heart By Heart Email</a></strong>
+          </li>
+          <li>
+           <i class="fa fa-phone"> &nbsp &nbsp</i><strong>+961 71 887230</strong>
+          </li>
+          <li>
+ <i class="fa fa-map" ></i> &nbsp &nbsp<strong>Beirut, Lebanon</strong>
+          </li>
+         
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 Heart By Heart
+  </div>
+</footer>
+
+        </div>
+    </form>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+    </asp:PlaceHolder>
+</body>
+</html>
